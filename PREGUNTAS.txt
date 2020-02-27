@@ -1,0 +1,69 @@
+Las preguntas teóricas ponerlas en un word, la parte práctica subirlo a github.com
+1. ¿Cuántas secciones tiene una clase?, señale cuáles son obligatorias y cuáles no. Dibujo un ejemplo.
+-Datos(importante)
+-constructores simples(imp)
+-constructores con parametros(imp)
+-get  y set
+-funciones
+
+int codigo
+String nombre
+
+public Practica01() {
+    }
+  public practica01(int codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
+
+  public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+2. Declare un array en Java y asígnele valores.
+
+ArrayList NumeroArray=new ArrayList[1,2,3,4,5,6,7];
+
+2.1 ¿Cómo obtengo el primer elemento del array?
+
+
+
+for (int i = 0; i <numero; i++) {
+
+            for (int i = 0; i <NumeroArray; i++) {
+
+            if(i==NumeroArray){
+             numero++;
+             break;
+}
+        }  
+        }
+2.2 ¿y el último?
+2.3 ¿Con qué estructura de control se itera/recorre un array? de un ejemplo.
+numero=NumeroArray.length;
+
+3. ¿Qué son los request y response?
+request.- es para obetener datos
+
+response .- es para mandar datos
+
+4. ¿Qué son los códigos HTTP (200, 400, 500) ?
+200.- no hay datos en la BD
+400.- error de usuario al madar un dato
+500.- error del servidor
+
+5. Diferencias entre GET y POST.
+post.- todo codigo que interactua con tu pagina por el metod POST
