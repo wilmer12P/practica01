@@ -12,22 +12,54 @@ and open the template in the editor.
     </head>
     <body>
         <div>RESTAURANTE BABY SHARK S.A.C</div>
-        
-        <table border="1" style="align-content: center">
+
+        <table id="MiTabla" border="1" style="align-content: center">
             <tr>
                 <th>Codigo</th>
                 <th>nombre</th>
                 <th>precio</th>
                 <th>Categoria</th>
             </tr>
-            
+
         </table>
-        <button onclick="$">mostrar</button>
-        
+        <button onclick="mostrar()">mostrar</button>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script type="text/javascript">
-            
-            
+            function mostrar(){
+                $.ajax({
+
+                    method: 'POST',
+                    url: 'platillo',
+
+                    success: function (msg) {
+                        var tabla = document.getElementById("MiTabla");
+                        for (var i = 0; i < msg.length; i++) {
+
+                            console.log(msg[i]);
+
+
+                            var fila = tabla.insertRow(1);
+
+                            var celda0 = fila.insertCell(0);
+                            var celda1 = fila.insertCell(1);
+                            var celda2 = fila.insertCell(2);
+                            var celda3 = fila.insertCell(3);
+
+
+                            celda0.innerHTML = msg[i].codigo;
+                            celda1.innerHTML = msg[i].nombre;
+                            celda2.innerHTML = msg[i].precio;
+                            celda3.innerHTML = msg[i].categoria;
+                        }
+                    },
+                    error: function (msg) {
+                        console.error(msg);
+                    }
+                });
+
+            }
+
         </script>
     </body>
 </html>
